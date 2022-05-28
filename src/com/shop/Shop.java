@@ -246,7 +246,7 @@ public class Shop {
 
 	public static void main(String[] args) {
 		Shop shop = new Shop();
-		String menuOption = "";
+		char menuOption = 0;
 		Connection conn = shop.connect();
 		
 		if (conn != null) {
@@ -261,33 +261,34 @@ public class Shop {
 				}
 			} while (!shop.isCustomerVerified());
 
-			while (!menuOption.equalsIgnoreCase("x")) {
+			while (menuOption != 'x') {
 				shop.displayMenu();
-				menuOption = Character.toString(shop.input.next().charAt(0));
+				// make users input lower case after entry to then have to only check for lowercase input
+				menuOption = Character.toLowerCase(shop.input.next().charAt(0));
 				System.out.println();
 				
 				switch(menuOption) {
-					case "p", "P": {
+					case 'p': {
 						shop.menuP();
 						break;
 					}
-					case "o", "O": {
+					case 'o': {
 						shop.menuO();
 						break;
 					}
-					case "r", "R": {
+					case 'r': {
 						shop.menuR();
 						break;
 					}
-					case "s", "S": {
+					case 's': {
 						shop.menuS();
 						break;
 					}
-					case "e", "E": {
+					case 'e': {
 						shop.menuE();
 						break;
 					}
-					case "b", "B": {
+					case 'b': {
 						shop.menuB();
 						break;
 					}
