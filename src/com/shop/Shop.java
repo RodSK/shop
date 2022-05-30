@@ -65,15 +65,17 @@ public class Shop {
 	}
 
 	private void displayMenu() {
-		System.out.println("\n===== MAIN MENU =====");
-		System.out.println("P - List all products.");
-		System.out.println("O – Order a product.");
-		System.out.println("R – Return a product.");
-		System.out.println("S - Search a product by name.");
-		System.out.println("E - List all orders.");
-		System.out.println("C - Current budget.");
-		System.out.println("X - Exit.");
-		System.out.print("\nEnter Menu Option: ");
+		System.out.println("""
+			===== MAIN MENU =====.
+			P - List all products.
+			O - Order a product.
+			R - Return a product.
+			S - Search a product by name.
+			E - List all orders.
+			C - Current budget.
+			X - Exit.
+			\nEnter Menu Option: 
+			""");
 	}
 
 	private boolean isCustomerVerified() {
